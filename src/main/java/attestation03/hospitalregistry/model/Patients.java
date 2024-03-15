@@ -25,7 +25,7 @@ public class Patients {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
 
     @Column(name = "name")
@@ -35,11 +35,11 @@ public class Patients {
     private String patronymic;
 
     //date_of_birthday
-    @DateTimeFormat(pattern = "dd.MM.yyyy")
-    private Date dateOfBirthday;
+    @Column(name = "date_Of_Birthday")
+    private String dateOfBirthday;
 
     @Column(name = "phone_number")
-    private Integer phoneNumber;
+    private Long phoneNumber;
 
     @Column(name = "place_of_work")
     private String placeOfWork;

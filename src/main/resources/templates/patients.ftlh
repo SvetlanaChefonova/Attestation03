@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Пациенты</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Идентификатор</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+            <th>Дата рождения</th>
+            <th>Номер телефона</th>
+            <th>Место работы</th>
+            <th>Домашний адрес</th>
+            <th>Электронная почта</th>
+            <th>Номер полиса</th>
+            <th>Страховая компания</th>
+        </tr>
+        <#list patientsList as patients>
+            <tr>
+                <td>${patients.id}</td>
+                <td>${patients.last_name}</td>
+                <td>${patients.name}</td>
+                <td>${patients.patronimyc}</td>
+                <td>${patients.date_Of_Birthday}</td>
+                <td>${patients.phone_number}</td>
+                <td>${patients.place_of_workd}</td>
+                <td>${patients.home_address}</td>
+                <td>${patients.email}</td>
+                <td>${patients.policy_number}</td>
+                <td>${patients.insurance_company}</td>
+            </tr>
+        </#list>
+    </table>
+        <p><a href="/patient-create">Create patient</a></p>
+</body>
+</html>

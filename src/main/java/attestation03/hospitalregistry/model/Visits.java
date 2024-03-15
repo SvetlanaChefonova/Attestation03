@@ -24,11 +24,11 @@ public class Visits {
     private Long id;
 
     //date_time_of_the_visit
-    @DateTimeFormat( pattern = "dd.MM.yyyy HH:mm")
-    private Date dateTimeOfTheVisit;
+   // @DateTimeFormat( pattern = "dd.MM.yyyy HH:mm")
+    //private Date dateTimeOfTheVisit;
 
-    //@Column(name = "time_of_the_visit")
-    //private TimeValue timeOfTheVisit;
+    @Column(name = "data_time_of_the_visit")
+    private String dataTimeOfTheVisit;
 
     @ManyToOne
     @JoinColumn(name="patient_id", nullable = false)

@@ -1,17 +1,13 @@
 package attestation03.hospitalregistry.controller;
 
-import attestation03.hospitalregistry.model.Patients;
 import attestation03.hospitalregistry.services.PatientsServices;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 /**
  * localhost:8080/patients
@@ -34,9 +30,9 @@ public class PatientsController {
        // model.addAttribute("patients", patients);
        // return "patients";
    // }
-    @GetMapping("/")
+    @GetMapping
     public String getPatientsPage(Model model) {
-        model.addAttribute("patients", patientsServices.getAll());
+        model.addAttribute("patientsList", patientsServices.getAll());
         return "patients";
     }
 
@@ -50,6 +46,10 @@ public class PatientsController {
         //patientsServices.savePatient(patients);
        // return "redirect:/patients";
   //  }
+
+    // @PutMapping
+
+   // @DeleteMapping
 
    // @GetMapping("/patient-delete/{id}")
    // public String deletePatient(@PathVariable("id") Long id){

@@ -7,11 +7,13 @@ import java.util.List;
 
 public interface PatientsServices {
 
-   // Patients findById(Long id);
+    Patients findById(Long id);
     List<Patients> getAll();
-   // Patients savePatients(Patients patients);
-   // public void update();
-  // void deleteById(Long id);
+    Patients savePatients(Patients patients);
+    void deleteById(Long id);
+
+
+    // public void update();
 
     //void savePatient(Patients patients);
 }

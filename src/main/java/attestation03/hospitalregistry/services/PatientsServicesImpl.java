@@ -16,10 +16,10 @@ public class PatientsServicesImpl implements PatientsServices{
     private final PatientsRepository patientsRepository;
 
 
-   // @Override
-   // public Patients findById(Long id){
-      //  return patientsRepository.getOne(id);
-   // }
+    @Override
+    public Patients findById(Long id){
+        return patientsRepository.getOne(id);
+    }
 
 
     /**
@@ -31,19 +31,19 @@ public class PatientsServicesImpl implements PatientsServices{
         return patientsRepository.findAll(); //аналог SELEST * from patients;
     }
 
-   // @Override
-   // public Patients savePatients(Patients patients){
-       // return patientsRepository.save(patients);
-  //  }
+    @Override
+    public Patients savePatients(Patients patients){
+        return patientsRepository.save(patients);
+    }
 
-  //  @Override
-   // public void update() {
+    // @Override
+    //public void update() {
 
    // }
 
 
-  //  @Override
-   // public void deleteById(Long id){
-      //  patientsRepository.deleteById(id);
-   // }
+    @Override
+    public void deleteById(Long id){
+        patientsRepository.deleteById(id);
+    }
 }

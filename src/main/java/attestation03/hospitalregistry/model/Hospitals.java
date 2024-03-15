@@ -26,7 +26,7 @@ public class Hospitals {
     private String hospitalAddress;
 
     @Column(name = "hospital_phone")
-    private Integer hospitalPhone;
+    private Long hospitalPhone;
 
     @OneToMany(mappedBy="hospitals")
     List<Visits> visits;
