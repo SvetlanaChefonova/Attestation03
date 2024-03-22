@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:14-alpine'
+    container_name: 'java-postgres'
+    ports:
+      - 5432:5432
+    entrypoint:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=Sveta1994!'
+      - 'POSTGRES_DB=postgres'
+
+  app:
+    build: .
+    ports:
+      - 8080

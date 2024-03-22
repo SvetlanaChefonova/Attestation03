@@ -24,7 +24,7 @@ public class VisitsController {
 
     @GetMapping
     public String getVisitsPage(Model model) {
-        model.addAttribute("visits", visitsServices.getAll());
+        model.addAttribute("visitsList", visitsServices.getAll());
         return "visits";
     }
 }

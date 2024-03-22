@@ -1,30 +1,33 @@
 package attestation03.hospitalregistry.dto;
 
 import attestation03.hospitalregistry.model.Patients;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.Size;
+import lombok.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+
 public class PatientsDto {
+    @NotNull
     private Long id;
+    @NotNull
+    @Size(min=2)
     private String lastName;
+    @NotNull
+    @Size(min=2)
     private String name;
+    @NotNull
+    @Size(min=2)
     private String patronymic;
-    private String dateOfBirthday;
-    private Long phoneNumber;
-    private String placeOfWork;
-    private String homeAddress;
-    private String email;
-    private Long policyNumber;
-    private String insuranceCompany;
+
 
     public static PatientsDto from(Patients patients) {
         return PatientsDto.builder()
@@ -32,13 +35,6 @@ public class PatientsDto {
                 .lastName(patients.getLastName())
                 .name(patients.getName())
                 .patronymic(patients.getPatronymic())
-                .dateOfBirthday(patients.getDateOfBirthday())
-                .phoneNumber(patients.getPhoneNumber())
-                .placeOfWork(patients.getPlaceOfWork())
-                .homeAddress(patients.getHomeAddress())
-                .email(patients.getEmail())
-                .policyNumber(patients.getPolicyNumber())
-                .insuranceCompany(patients.getInsuranceCompany())
                 .build();
     }
 

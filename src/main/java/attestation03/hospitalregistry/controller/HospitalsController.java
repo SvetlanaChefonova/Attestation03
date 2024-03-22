@@ -23,7 +23,7 @@ public class HospitalsController {
 
     @GetMapping
     public String getHospitlasPage(Model model) {
-        model.addAttribute("hospitals", hospitalsServices.getAll());
+        model.addAttribute("hospitalsList", hospitalsServices.getAll());
         return "hospitals";
     }
 }

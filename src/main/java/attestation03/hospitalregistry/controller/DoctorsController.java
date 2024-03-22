@@ -24,7 +24,7 @@ public class DoctorsController {
 
     @GetMapping
     public String getDoctorsPage(Model model) {
-        model.addAttribute("doctors", doctorsServices.getAll());
+        model.addAttribute("doctorsList", doctorsServices.getAll());
         return "doctors";
     }
 }

@@ -27,16 +27,16 @@
         <#list patientsList as patients>
             <tr>
                 <td>${patients.id}</td>
-                <td>${patients.last_name}</td>
+                <td>${patients.lastName}</td>
                 <td>${patients.name}</td>
-                <td>${patients.patronimyc}</td>
-                <td>${patients.date_Of_Birthday}</td>
-                <td>${patients.phone_number}</td>
-                <td>${patients.place_of_workd}</td>
-                <td>${patients.home_address}</td>
+                <td>${patients.patronymic}</td>
+                <td>${patients.dateOfBirthday}</td>
+                <td>${patients.phoneNumber}</td>
+                <td>${patients.placeOfWork}</td>
+                <td>${patients.homeAddress}</td>
                 <td>${patients.email}</td>
-                <td>${patients.policy_number}</td>
-                <td>${patients.insurance_company}</td>
+                <td>${patients.policyNumber}</td>
+                <td>${patients.insuranceCompany}</td>
             </tr>
         </#list>
     </table>

@@ -1,0 +1,6 @@
+FROM khipu/openjdk17-alpine
+MAINTAINER Svetlana Chefonova <svetlana_chefonova@mail.ru>
+ARG WAR_FILE=target/HospitalRegistry-0.0.1-SNAPSHOT.jar
+WORKDIR /opt/hospitalRegistryApp
+COPY ${WAR_FILE} hospitalRegistryApp.jar
+ENTRYPOINT ["java", "-jar", "hospitalRegistryApp.jar"]

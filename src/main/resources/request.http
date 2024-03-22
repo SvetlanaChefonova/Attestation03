@@ -1,0 +1,15 @@
+### Получить список всех пациентов
+
+GET http://localhost:8080/patients
+
+### Обновить имя пациенту с id-3
+PUT http://localhost:8080/patients/3
+Content-Type: application/json
+
+{
+    "lastName": "Федоров",
+    "name": "Федор",
+    "patronymic": "Федорович"
+}
+
+

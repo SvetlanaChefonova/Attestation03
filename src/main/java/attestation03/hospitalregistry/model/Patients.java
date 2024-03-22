@@ -56,6 +56,9 @@ public class Patients {
     @Column(name = "insurance_company")
     private String insuranceCompany;
 
+    @Column(name = "has_deleted")
+    private Boolean hasDeleted;
+
     @OneToMany(mappedBy="patients")
     List<Visits>visits;
 }
