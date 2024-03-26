@@ -17,6 +17,15 @@ import java.util.stream.Collectors;
 public class VisitsDto {
     private Long id;
     private String dataTimeOfTheVisit;
+    private String patientLastName;
+    private String patientName;
+    private String patientPatronymic;
+    private String doctorLastName;
+    private String doctorName;
+    private String doctorPatronymic;
+    private String doctorSpecialization;
+    private String hospitalName;
+
 
 
 
@@ -24,10 +33,18 @@ public class VisitsDto {
         return VisitsDto.builder()
                 .id(visits.getId())
                 .dataTimeOfTheVisit(visits.getDataTimeOfTheVisit())
+                .patientLastName(visits.getPatients().getLastName())
+                .patientName(visits.getPatients().getName())
+                .patientPatronymic(visits.getPatients().getPatronymic())
+                .doctorLastName(visits.getDoctors().getLastName())
+                .doctorName(visits.getDoctors().getName())
+                .doctorPatronymic(visits.getDoctors().getPatronymic())
+                .doctorSpecialization(visits.getDoctors().getSpecialization())
+                .hospitalName(visits.getHospitals().getHospitalName())
                 .build();
     }
 
     public static List<VisitsDto> from(List<Visits> visits) {
-        return visits.stream().map(VisitsDto::from).collect(Collectors.toList());
+        return visits.stream().map(VisitsDto::from).toList();
     }
 }

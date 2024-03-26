@@ -28,7 +28,7 @@ public class Hospitals {
     @Column(name = "hospital_phone")
     private Long hospitalPhone;
 
-    @OneToMany(mappedBy="hospitals")
-    List<Visits> visits;
+  //  @OneToMany(mappedBy="hospitals")
+  //  List<Visits> visits;
 
 }

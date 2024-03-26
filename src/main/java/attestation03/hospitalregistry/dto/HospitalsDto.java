@@ -32,6 +32,6 @@ public class HospitalsDto {
     }
 
     public static List<HospitalsDto> from(List<Hospitals> hospitals) {
-        return hospitals.stream().map(HospitalsDto::from).collect(Collectors.toList());
+        return hospitals.stream().map(HospitalsDto::from).toList();
     }
 }

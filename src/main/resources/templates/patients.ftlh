@@ -23,6 +23,7 @@
             <th>Электронная почта</th>
             <th>Номер полиса</th>
             <th>Страховая компания</th>
+            <th>Soft flag</th>
         </tr>
         <#list patientsList as patients>
             <tr>
@@ -37,9 +38,17 @@
                 <td>${patients.email}</td>
                 <td>${patients.policyNumber}</td>
                 <td>${patients.insuranceCompany}</td>
+                <td>
+                    <#if patients.hasDeleted>
+                        true
+                        <#else>
+                        false
+                    </#if>
+                <td>
+
             </tr>
         </#list>
     </table>
-        <p><a href="/patient-create">Create patient</a></p>
+
 </body>
 </html>

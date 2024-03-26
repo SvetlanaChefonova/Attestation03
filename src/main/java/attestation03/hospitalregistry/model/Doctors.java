@@ -35,6 +35,6 @@ public class Doctors {
     @Column(name = "cabinet_number")
     private Integer cabinetNumber ;
 
-    @OneToMany(mappedBy="doctors")
-    List<Visits> visits;
+  //  @OneToMany(mappedBy="doctors")
+   // List<Visits> visits;
 }

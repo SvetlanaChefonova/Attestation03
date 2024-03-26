@@ -59,6 +59,6 @@ public class Patients {
     @Column(name = "has_deleted")
     private Boolean hasDeleted;
 
-    @OneToMany(mappedBy="patients")
-    List<Visits>visits;
+   // @OneToMany(mappedBy="patients")
+  //  List<Visits>visits;
 }

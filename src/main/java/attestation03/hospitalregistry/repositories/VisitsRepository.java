@@ -8,9 +8,5 @@ import java.util.List;
 
 public interface VisitsRepository extends JpaRepository<Visits, Long> {
 
-    //void validateVisits(Visits visit) throws InvalidVisitException;
-    //void createVisit(Visits visit) throws InavalidVisitException;
-    //Visits void findByID(String id) throws IOExcepton;
-    //void update(Visits visit);
-    //void deleteById(Long id);
+
 }

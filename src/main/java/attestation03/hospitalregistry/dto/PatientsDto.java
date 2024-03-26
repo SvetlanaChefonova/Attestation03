@@ -1,6 +1,7 @@
 package attestation03.hospitalregistry.dto;
 
 import attestation03.hospitalregistry.model.Patients;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.jetbrains.annotations.NotNull;
@@ -20,12 +21,15 @@ public class PatientsDto {
     private Long id;
     @NotNull
     @Size(min=2)
+    @Pattern(regexp = "[a-zA-Z0-9а-яА-Я. _-]{2,15}$", message = "Некорректная ввод данных")
     private String lastName;
     @NotNull
     @Size(min=2)
+    @Pattern(regexp = "[a-zA-Z0-9а-яА-Я. _-]{2,15}$", message = "Некорректная ввод данных")
     private String name;
     @NotNull
     @Size(min=2)
+    @Pattern(regexp = "[a-zA-Z0-9а-яА-Я. _-]{2,15}$", message = "Некорректная ввод данных")
     private String patronymic;
 
 
@@ -39,7 +43,7 @@ public class PatientsDto {
     }
 
     public static List<PatientsDto> from(List<Patients> patients) {
-        return patients.stream().map(PatientsDto::from).collect(Collectors.toList());
+        return patients.stream().map(PatientsDto::from).toList();
     }
 
 }

@@ -1,19 +1,21 @@
 package attestation03.hospitalregistry.services;
 
 import attestation03.hospitalregistry.dto.PatientsDto;
+import attestation03.hospitalregistry.dto.PatientsPage;
 import attestation03.hospitalregistry.exception.PatientNotFoundException;
+import attestation03.hospitalregistry.model.PatientTest;
 import attestation03.hospitalregistry.model.Patients;
 import attestation03.hospitalregistry.repositories.PatientsRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 
-import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
-
-import static java.util.Date.from;
 
 @Service
 @RequiredArgsConstructor
@@ -21,14 +23,30 @@ public class PatientsServicesImpl implements PatientsServices{
 
     private final PatientsRepository patientsRepository;
 
+    @Value("${default.page-size}")
+    private int defaultPageSize;
+
     /**
      * Получить всех поциентов из БД
+     *
      * @return список пациентов
      */
     @Override
     public List<Patients> getAll() {
-        return patientsRepository.findAllButNotHasDeleted(); //аналог SELEST * from patients;
+       return patientsRepository.findAllButNotHasDeleted(); //аналог SELEST * from patients;
     }
+
+    @Override
+    public PatientsPage getAllPatientsByPage(int page) {
+        PageRequest pageRequest = PageRequest.of(page, defaultPageSize);
+        Page<Patients> patientsByPage = patientsRepository.findAll(pageRequest);
+
+        return PatientsPage.builder()
+                .patients(Collections.singletonList(from((Patients) patientsByPage.getContent())))
+                .totalPagesCount(patientsByPage.getTotalPages())
+                .build();
+    }
+
 
     @Override
     public PatientsDto getPatientById(Long patientId) {
@@ -88,14 +106,10 @@ public class PatientsServicesImpl implements PatientsServices{
         patientsRepository.save(patients);
     }
 
+    @Override
+    public void deletePatient(Long id) {
 
-    // @Override
-    // public Patients findById(Long id){
-    // return patientsRepository.getOne(id);
-    // }
+    }
 
-    // @Override
-    //public Patients savePatients(Patients patients){
-    //return patientsRepository.save(patients);
-    //}
+
 }

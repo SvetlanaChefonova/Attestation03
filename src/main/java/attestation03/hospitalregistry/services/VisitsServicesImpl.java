@@ -1,8 +1,6 @@
 package attestation03.hospitalregistry.services;
 
-import attestation03.hospitalregistry.model.Patients;
-import attestation03.hospitalregistry.model.Visits;
-import attestation03.hospitalregistry.repositories.PatientsRepository;
+import attestation03.hospitalregistry.dto.VisitsDto;
 import attestation03.hospitalregistry.repositories.VisitsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,7 +17,12 @@ public class VisitsServicesImpl implements VisitsServices{
      * @return список визитов
      */
     @Override
-    public List<Visits> getAll() {
-        return visitsRepository.findAll(); //аналог SELEST * from visits;
+    public List<VisitsDto> getAll() {
+        return VisitsDto.from(visitsRepository.findAll()); //аналог SELEST * from visits;
+    }
+
+    @Override
+    public void deleteById(Long id){
+        visitsRepository.deleteById(id);
     }
 }

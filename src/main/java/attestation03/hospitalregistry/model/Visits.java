@@ -42,14 +42,4 @@ public class Visits {
     @JoinColumn(name="hospital_id", nullable = false)
     private Hospitals hospitals;
 
-
-    //@OneToMany(cascade = CascadeType.ALL)   id_patient
-   // private ;
-
-   // @OneToMany(cascade = CascadeType.ALL) id_doctor
-   // private ;
-
-    //@OneToMany(cascade = CascadeType.ALL) id_hospital
-    // private ;
-
 }
