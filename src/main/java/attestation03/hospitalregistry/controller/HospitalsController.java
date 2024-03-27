@@ -28,7 +28,7 @@ public class HospitalsController {
 
     //получение всех больниц если использовать freemarker
     @GetMapping
-    public String getHospitlasPage(Model model) {
+    public String getHospitalsPage(Model model) {
         model.addAttribute("hospitalsList", hospitalsServices.getAll());
         return "hospitals";
     }

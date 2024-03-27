@@ -2,6 +2,7 @@ package attestation03.hospitalregistry.services;
 
 import attestation03.hospitalregistry.dto.HospitalsDto;
 import attestation03.hospitalregistry.dto.PatientsDto;
+import attestation03.hospitalregistry.exception.HospitalNotFoundException;
 import attestation03.hospitalregistry.exception.PatientNotFoundException;
 import attestation03.hospitalregistry.model.Hospitals;
 import attestation03.hospitalregistry.model.Patients;
@@ -30,7 +31,7 @@ public class HospitalsServicesImpl implements HospitalsServices {
     @Override
     public HospitalsDto getHospitalById(Long hospitalId) {
         Hospitals hospitals = hospitalsRepository.findById(hospitalId)
-                .orElseThrow(PatientNotFoundException::new);
+                .orElseThrow(HospitalNotFoundException::new);
 
         return from(hospitals);
     }

@@ -1,10 +1,9 @@
 package attestation03.hospitalregistry.repository;
 
-import attestation03.hospitalregistry.dto.PatientsDto;
+
 import attestation03.hospitalregistry.model.Patients;
 import attestation03.hospitalregistry.repositories.PatientsRepository;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,7 +2,6 @@ package attestation03.hospitalregistry.controller;
 
 import attestation03.hospitalregistry.dto.PatientsDto;
 import attestation03.hospitalregistry.dto.PatientsPage;
-import attestation03.hospitalregistry.model.Patients;
 import attestation03.hospitalregistry.services.PatientsServices;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

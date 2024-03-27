@@ -22,7 +22,19 @@ public class VisitsServicesImpl implements VisitsServices{
     }
 
     @Override
+    public VisitsDto getVisitById(Long hospitalId) {
+        return null;
+    }
+
+    @Override
     public void deleteById(Long id){
         visitsRepository.deleteById(id);
     }
+
+    @Override
+    public void deleteVisit(Long id){
+        visitsRepository.deleteById(id);
+    }
+
+
 }

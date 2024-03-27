@@ -2,9 +2,7 @@ package attestation03.hospitalregistry.services;
 
 import attestation03.hospitalregistry.dto.PatientsDto;
 import attestation03.hospitalregistry.exception.PatientNotFoundException;
-import attestation03.hospitalregistry.model.Patients;
 import attestation03.hospitalregistry.repositories.PatientsRepository;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -20,9 +18,10 @@ import java.util.List;
 import static java.util.Date.from;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+//интеграционный тест
 @DisplayName(value = "Patient Service is working when")
 @SpringBootTest
-class PatientsServicesTest {
+public class PatientsServicesTest {
     @MockBean
     private PatientsRepository patientsRepositoryMock;
 
@@ -51,11 +50,11 @@ class PatientsServicesTest {
         patients.add(patientsSecond);
     }
 
-  /*  @Test
+   /* @Test
     public void returning_patients_by_id() {
         Assertions.assertThrows(PatientNotFoundException.class, ()->{
             Mockito.when(
-                    from(patientsRepositoryMock.findById(10L)).orElseThrow(PatientNotFoundException::new)
+                    from(patientsRepositoryMock.findById(20L)).orElseThrow(PatientNotFoundException::new)
             ).thenReturn(patientsSecond);
         });
         PatientsDto found = patientsServices.getPatientById(Long.valueOf(20));
