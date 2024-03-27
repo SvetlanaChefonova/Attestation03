@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface PatientsServices {
     List<Patients> getAll();
-    PatientsPage getAllPatientsByPage(int page);
+   // PatientsPage getAllPatientsByPage(int page);
     PatientsDto getPatientById(Long patientId);
     PatientsDto addPatient(PatientsDto patients);
     PatientsDto updatePatient(Long patientId, PatientsDto newData);

@@ -3,7 +3,6 @@ package attestation03.hospitalregistry.services;
 import attestation03.hospitalregistry.dto.PatientsDto;
 import attestation03.hospitalregistry.dto.PatientsPage;
 import attestation03.hospitalregistry.exception.PatientNotFoundException;
-import attestation03.hospitalregistry.model.PatientTest;
 import attestation03.hospitalregistry.model.Patients;
 import attestation03.hospitalregistry.repositories.PatientsRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,8 +22,8 @@ public class PatientsServicesImpl implements PatientsServices{
 
     private final PatientsRepository patientsRepository;
 
-    @Value("${default.page-size}")
-    private int defaultPageSize;
+   // @Value("${page-size}")
+  //  private int PageSize;
 
     /**
      * Получить всех поциентов из БД
@@ -36,16 +35,16 @@ public class PatientsServicesImpl implements PatientsServices{
        return patientsRepository.findAllButNotHasDeleted(); //аналог SELEST * from patients;
     }
 
-    @Override
+   /* @Override
     public PatientsPage getAllPatientsByPage(int page) {
-        PageRequest pageRequest = PageRequest.of(page, defaultPageSize);
+        PageRequest pageRequest = PageRequest.of(page, PageSize);
         Page<Patients> patientsByPage = patientsRepository.findAll(pageRequest);
 
         return PatientsPage.builder()
                 .patients(Collections.singletonList(from((Patients) patientsByPage.getContent())))
                 .totalPagesCount(patientsByPage.getTotalPages())
                 .build();
-    }
+    }*/
 
 
     @Override

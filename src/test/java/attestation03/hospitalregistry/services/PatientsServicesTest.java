@@ -50,7 +50,7 @@ public class PatientsServicesTest {
         patients.add(patientsSecond);
     }
 
-   /* @Test
+    /* @Test
     public void returning_patients_by_id() {
         Assertions.assertThrows(PatientNotFoundException.class, ()->{
             Mockito.when(

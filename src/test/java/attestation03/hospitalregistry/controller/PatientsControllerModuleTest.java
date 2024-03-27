@@ -18,9 +18,9 @@ import java.util.List;
 
 import static org.mockito.Mockito.doReturn;
 
-@ExtendWith(MockitoExtension.class)
+//@ExtendWith(MockitoExtension.class)
 public class PatientsControllerModuleTest {
-    @Mock
+  /*  @Mock
     PatientsServices patientsServices;
     @InjectMocks
     PatientsController patientsController;
@@ -55,5 +55,5 @@ public class PatientsControllerModuleTest {
         Assertions.assertEquals(HttpStatus.OK, patientsPageResponseEntity.getStatusCode());
         Assertions.assertEquals(MediaType.APPLICATION_JSON, patientsPageResponseEntity.getHeaders().getContentType());
         Assertions.assertEquals(patientsPage, patientsPageResponseEntity.getBody());
-    }
+    }*/
 }

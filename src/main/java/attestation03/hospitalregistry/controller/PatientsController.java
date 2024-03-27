@@ -36,9 +36,9 @@ public class PatientsController {
     }
 
 
-    public ResponseEntity<PatientsPage> getAllPatientsByPage(int page) {
+   /* public ResponseEntity<PatientsPage> getAllPatientsByPage(int page) {
         return ResponseEntity.ok(patientsServices.getAllPatientsByPage(page));
-    }
+    }*/
 
     //получение всех пациентов в формате JSON
     @GetMapping("/getPatients")
